@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<div style="width: 500px; margin: auto;">
+    <fieldset name="Video File Upload and Display">
+        {% if msg %} {% autoescape off %} {{ msg }} {% endautoescape %} {% endif %}
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <dl>
+                <p>
+                    <label>Browse and select a video file</label>&nbsp;&nbsp;
+                    {{ form.as_p }}
+                </p>
+            </dl>
+            <p>
+                <input type="submit" value="Upload and Display">
+            </p>
+        </form>
+    </fieldset>
+</div>	
+{% endblock %}
